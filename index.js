@@ -12,12 +12,10 @@ const employee = {
 
 function  updateEmployeeWithKeyAndValue(employee, key, value) {
    // Create a new object using the  spread operator and update the vaalue for a gien key
-return}
-...employee,
-[key]: value
+   return {
+    ...employee,
+    [key]: value
   };
-
-}
 
 //Function to destructively update employee object with a key and value
 
