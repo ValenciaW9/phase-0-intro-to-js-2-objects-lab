@@ -7,8 +7,6 @@ const employee = {
     streetAddress: "123 Main ST"
 };
 
-
-//Function to update employee object with  a key and value
 function destructiivelyUpdateEmployeeWithKeyAndValue(employee, key, value)
 //Update the value for the given key in the original  employee object
 const employee[key] = value;
@@ -21,27 +19,6 @@ function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value) {
     employee[key] = value;
     return employee;
   }
-  
-  
-  
-
-//Function to delete a property from the employee object 
-function destructivelyDeleteFromEmployeeByKey(employee,key) {
-    // Create a new object using the spread operator and 
-    const newEmployee = { ...employee};
-    delete newEMployee[key];
-    return newEmployee;
-
-}
-
-//Function to destructively delete a property from the employee object
-function destructiivelyDeleteFromEmployeeByKey(employee, key)  {
-   // Delete the key-value pair from the orignal employee  object
-   dekete employee[key];
-   return employee;
-
-}
-
 
 
 ////Let's say we are working on a program that will keep track of a company's employees. We want to store each employee as an Object. We're starting small, so to begin with we'll only keep track of the employee's name and street address.
