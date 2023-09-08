@@ -2,23 +2,57 @@
 
 //Create an employee object with name and streetAddress keys
 
+// Create an employee object with name and streetAddress keys
 const employee = {
     name: "John Doe",
     streetAddress: "123 Main ST"
 };
 
-function destructiivelyUpdateEmployeeWithKeyAndValue(employee, key, value)
-//Update the value for the given key in the original  employee object
-employee[key] = value;
-return employee;
+// Function to update the employee object with a new key-value pair
+function updateEmployeeWithKeyAndValue(employee, key, value) {
+    return {
+        ...employee,
+        [key]: value
+    };
 }
 
-
+// Function to destructively update the employee object with a new key-value pair
 function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value) {
-    // Update the value for the given key in the original employee object
     employee[key] = value;
     return employee;
-  }
+}
+
+// Function to delete a key-value pair from the employee object
+function deleteFromEmployeeByKey(employee, key) {
+    const newEmployee = { ...employee };
+    delete newEmployee[key];
+    return newEmployee;
+}
+
+// Function to destructively delete a key-value pair from the employee object
+function destructivelyDeleteFromEmployeeByKey(employee, key) {
+    delete employee[key];
+    return employee;
+}
+
+// Test the functions
+console.log(employee); // Output: { name: 'John Doe', streetAddress: '123 Main ST' }
+
+const updatedEmployee = updateEmployeeWithKeyAndValue(employee, 'name', 'Jane Smith');
+console.log(updatedEmployee); // Output: { name: 'Jane Smith', streetAddress: '123 Main ST' }
+
+const destructivelyUpdatedEmployee = destructivelyUpdateEmployeeWithKeyAndValue(employee, 'streetAddress', '456 Elm ST');
+console.log(destructivelyUpdatedEmployee); // Output: { name: 'John Doe', streetAddress: '456 Elm ST' }
+console.log(employee); // Output: { name: 'John Doe', streetAddress: '456 Elm ST' }
+
+const deletedEmployee = deleteFromEmployeeByKey(employee, 'name');
+console.log(deletedEmployee); // Output: { streetAddress: '456 Elm ST' }
+console.log(employee); // Output: { name: 'John Doe', streetAddress: '456 Elm ST' }
+
+const destructivelyDeletedEmployee = destructivelyDeleteFromEmployeeByKey(employee, 'streetAddress');
+console.log(destructivelyDeletedEmployee); // Output: { name: 'John Doe' }
+console.log(employee); // Output: { name: 'John Doe' }
+
 
 
 ////Let's say we are working on a program that will keep track of a company's employees. We want to store each employee as an Object. We're starting small, so to begin with we'll only keep track of the employee's name and street address.
