@@ -10,19 +10,18 @@ const employee = {
 
 //Function to update employee object with  a key and value
 
-function  updateEmployeeWithKeyAndValue(employee, key, value) {
-   // Create a new object using the  spread operator and update the vaalue for a gien key
-   return {
-    ...employee,
-    [key]: value
-  };
+function  destructiivelyUpdateEmployeeWithKeyAndValue(employee, key, value)
+//Update the value for the given key in the original  employee object
+employee[key] = value;
+return employee;
+}
 
 //Function to destructively update employee object with a key and value
 
-function  destructiivelyUpdateEmployeeWithKeyAndValue(employee, key, value)
- //Update the value for the given key in the original  employee object
-employee[key] = value;
-return employee;
+function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value) {
+    // Update the value for the given key in the original employee object
+    employee[key] = value;
+    return employee;
 }
 
 //Function to delete a property from the employee object 
