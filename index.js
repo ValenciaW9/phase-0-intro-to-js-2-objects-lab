@@ -9,7 +9,7 @@ const employee = {
 
 function destructiivelyUpdateEmployeeWithKeyAndValue(employee, key, value)
 //Update the value for the given key in the original  employee object
-const employee[key] = value;
+employee[key] = value;
 return employee;
 }
 
